@@ -1,0 +1,25 @@
+<label [for]="labelName" [formGroup]="parentForm">
+  <ng-autocomplete name="labelName"
+                   [tabindex]="tabindex"
+                   [formControlName]="fcn"
+                   [data]="data | async"
+                   [searchKeyword]="keyword"
+                   (selected)='selectEvent($event)'
+                   (inputChanged)='onChangeSearch($event)'
+                   (inputFocused)='onFocused($event)'
+                   (inputCleared)='closePanel($event)'
+                   [itemTemplate]="itemTemplate"
+                   [notFoundTemplate]="notFoundTemplate"
+                   [disabled]="formControl.invalid"
+                   [placeHolder]="placeholder"
+                   #auto>
+  </ng-autocomplete>
+
+  <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+  </ng-template>
+</label>

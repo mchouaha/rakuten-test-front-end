@@ -1,0 +1,43 @@
+.shippingInfo {
+  display: flex;
+  flex-direction: column;
+
+  .infoContainerAdress {
+    ::ng-deep app-input-textarea-payment-form textarea {
+      width: 100%;
+      height: 50px;
+    }
+  }
+
+  .infoContainerCountryCityCost {
+    display: flex;
+
+    label:nth-child(1)  {
+      width:100%;
+    }
+
+    .infoContainerCountryCity {
+      display: flex;
+      width: 365px;
+    }
+
+    .costContainer{
+      margin-left: 10px;
+    }
+
+    .ng-autocomplete {
+      width: 100%;
+    }
+
+    ::ng-deep .autocomplete-container {
+      height: 18px;
+    }
+    ::ng-deep .autocomplete-container .input-container input {
+      height: 100%;
+      background-color: white;
+      font-size: 12px !important;
+      padding: 0 4px;
+      line-height: normal;
+    }
+  }
+}

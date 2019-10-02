@@ -1,0 +1,10 @@
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+
+  ::ng-deep app-input-text-payment-form {
+    input {
+      width: 100%
+    }
+  }
+}

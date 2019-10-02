@@ -1,0 +1,24 @@
+<label [for]="labelName" [formGroup]="parentForm"> {{labelName}} <br/>
+  <input type="text"
+         [name]="labelName"
+         [tabindex]="tabindex"
+         [formControlName]="fcn"
+         [placeholder]="placeholder"
+         [ngClass]="{'no-valid': formControl.invalid && (formControl.dirty || formControl.touched)}"
+         [readonly]="readonly">
+  <div class="form-control-feedback">
+    <div *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">
+      <div *ngIf="formControl.errors.pattern">
+        <p *ngIf="fcn === 'firstname' || fcn === 'surname' || fcn === 'cardname'">{{labelName}} should be only letters</p>
+        <p *ngIf="fcn === 'cardnumber'|| fcn === 'cardcvv'">{{labelName}} should be only numbers</p>
+      </div>
+      <div *ngIf="formControl.errors.pattern || formControl.errors.minlength || formControl.errors.maxlength">
+        <p *ngIf="fcn === 'cardnumber'">Card number should be only 16 digits</p>
+        <p *ngIf="fcn === 'cardcvv'">Card CVV should be only 3 digits</p>
+      </div>
+      <div *ngIf="!formControl.errors.pattern">
+        <p>{{labelName}} required</p>
+      </div>
+    </div>
+  </div>
+</label>

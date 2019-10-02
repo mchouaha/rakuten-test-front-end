@@ -1,0 +1,11 @@
+<label [for]="labelName" [formGroup]="parentForm"> Adress <br/>
+  <textarea type="text"
+            [tabindex]="tabindex"
+            [formControlName]="fcn"
+            [placeholder]="placeholder"
+            [ngClass]="{'no-valid': formControl.invalid && (formControl.dirty || formControl.touched)}">
+      </textarea>
+  <div class="form-control-feedback">
+    <p *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">Adress required</p>
+  </div>
+</label>

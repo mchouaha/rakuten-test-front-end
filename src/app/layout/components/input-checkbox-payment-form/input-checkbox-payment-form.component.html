@@ -1,0 +1,9 @@
+<label [for]="labelName" [formGroup]="parentForm">
+  <input type="checkbox"
+         [name]="labelName"
+         [tabindex]="tabindex"
+         [formControlName]="fcn"
+         required/>
+  <span
+    [ngClass]="{'no-agreed': formControl.invalid && (formControl.dirty || formControl.touched)}"> {{placeholder}}</span>
+</label>

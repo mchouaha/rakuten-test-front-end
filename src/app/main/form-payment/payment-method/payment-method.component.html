@@ -1,0 +1,36 @@
+<div class="PaymentMethod">
+
+  <h3>Payment Method</h3>
+
+  <div class='paymentContainerCardName'>
+    <app-input-text-payment-form
+      [parentForm]="parentForm"
+      [config]="configs['cardname']">
+    </app-input-text-payment-form>
+  </div>
+
+  <br/>
+
+  <div class='paymentContainerCardNumberCVV'>
+
+    <app-input-text-payment-form
+      [parentForm]="parentForm"
+      [config]="configs['cardnumber']">
+    </app-input-text-payment-form>
+
+    <br/>
+
+    <app-input-text-payment-form
+      [parentForm]="parentForm"
+      [config]="configs['cardcvv']">
+
+    </app-input-text-payment-form>
+
+    <br/>
+
+  </div>
+
+</div>
+
+
+

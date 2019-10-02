@@ -1,0 +1,20 @@
+.PaymentMethod
+{
+  .paymentContainerCardName{
+    ::ng-deep app-input-text-payment-form {
+      input {
+        width: 100%
+      }
+    }
+  }
+  .paymentContainerCardNumberCVV
+  {
+      display:flex;
+      ::ng-deep app-input-text-payment-form:nth-child(1) {
+        flex-grow: 2;
+        input {
+          width: 95%
+        }
+      }
+  }
+}

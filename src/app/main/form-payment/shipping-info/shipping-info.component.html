@@ -1,0 +1,49 @@
+<div class="shippingInfo">
+
+  <h3>Shipping Information</h3>
+
+  <div class="infoContainerAdress">
+
+    <app-input-textarea-payment-form
+      [parentForm]="parentForm"
+      [config]="configs['adress']">
+    </app-input-textarea-payment-form>
+
+  </div>
+
+  <div class="infoContainerCountryCityCost">
+
+    <label [formGroup]="parentForm"> City <br/>
+
+      <div class='infoContainerCountryCity'>
+
+        <div class="countryContainer">
+          <app-input-select-payment-form
+            [data]="countries"
+            [parentForm]="parentForm"
+            [config]="configs['country']">
+          </app-input-select-payment-form>
+        </div>
+
+        <div class="ng-autocomplete cityContainer">
+          <app-auto-complete-payment-form
+            [parentForm]="parentForm"
+            [data]="suggestionsObs"
+            [config]="configs['city']">
+          </app-auto-complete-payment-form>
+        </div>
+
+      </div>
+
+    </label>
+
+    <div class="costContainer">
+      <app-input-text-payment-form
+        [parentForm]="parentForm"
+        [config]="configs['shippingcost']"
+      ></app-input-text-payment-form>
+    </div>
+
+  </div>
+
+</div>

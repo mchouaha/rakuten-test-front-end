@@ -1,0 +1,13 @@
+<label [for]="labelName" [formGroup]="parentForm">
+  <select
+    [name]="labelName"
+    [tabindex]="'tabindex'"
+    [formControlName]="fcn"
+    [ngClass]="{'no-valid': formControl.invalid && (formControl.dirty || formControl.touched)}">
+    <option [value]="null" disabled>{{labelName}}</option>
+    <option *ngFor="let country of data" [value]="country">{{country}}</option>
+  </select>
+  <div class="form-control-feedback">
+    <p *ngIf="formControl.invalid && (formControl.dirty || formControl.touched)">{{labelName}} required</p>
+  </div>
+</label>

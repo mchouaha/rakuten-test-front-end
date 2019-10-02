@@ -1,0 +1,18 @@
+<form [formGroup]="parentForm" (ngSubmit)="onSubmit()">
+
+  <app-personal-info [parentForm]="parentForm"></app-personal-info>
+  <app-shipping-info [parentForm]="parentForm"></app-shipping-info>
+  <app-payment-method [parentForm]="parentForm"></app-payment-method>
+
+  <br/>
+
+  <app-input-checkbox-payment-form
+    [parentForm]="parentForm"
+    [config]="configs['aggreement']">
+  </app-input-checkbox-payment-form>
+
+  <br/><br/>
+
+  <button class="button" type="submit">Send</button>
+
+</form>
