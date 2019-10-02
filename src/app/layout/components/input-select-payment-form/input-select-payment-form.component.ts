@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
+import {Config} from "../../../utils/constants";
 
 @Component({
   selector: 'app-input-select-payment-form',
@@ -10,7 +11,7 @@ export class InputSelectPaymentFormComponent implements OnInit {
 
   @Input() parentForm: FormGroup;
   @Input() data: [];
-  @Input() config: any;
+  @Input() config: Config;
   labelName: string;
   tabindex: string;
   placeholder: string;

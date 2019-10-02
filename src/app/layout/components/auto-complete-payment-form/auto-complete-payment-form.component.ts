@@ -3,7 +3,7 @@ import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {SuggestionsService} from '../../../services/suggestions.service';
-import {countriesInfoShipping} from '../../../utils/constants';
+import {Config, countriesInfoShipping} from '../../../utils/constants';
 
 @Component({
   selector: 'app-auto-complete-payment-form',
@@ -14,7 +14,7 @@ export class AutoCompletePaymentFormComponent implements OnInit {
   @ViewChild('auto', {static: false}) auto;
   @Input() data: Observable<string[]>;
   @Input() parentForm: FormGroup;
-  @Input() config: any;
+  @Input() config: Config;
   keyword = 'name';
   labelName: string;
   tabindex: string;
